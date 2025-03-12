@@ -1,0 +1,27 @@
+@model Student
+
+<table>
+    
+    <tr>
+        <td width="200"> ID</td><td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td width="200"> Name</td><td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td width="200"> Surname</td><td>@Model.Surname</td>
+    </tr>
+    <tr>
+        <td width="200"> BirthDate</td><td>@Model.BirthDate.ToLongDateString()</td>
+    </tr>
+   
+    
+</table>
+
+<a href="@Url.Action("Delete", "Student", new { id = Model.Id })" class="btn btn-danger"
+   onclick="return confirm('Bu öğrenciyi silmek istediğinize emin misiniz?');">
+    Delete
+</a>
+
+<a href="@Url.Action("Edit", "Student", new { id = Model.Id })" class="btn btn-warning">Edit</a>
+
